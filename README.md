@@ -24,7 +24,7 @@ Row 3 is from the offline test below:
 
 | A customer writes | A normal support agent | With BEZEN Reader |
 |---|---|---|
-| *"Where did you get my email address? I never signed up for anything from you. Take me off your list."* | Treats it as a question, answers it, keeps the conversation going | **Protecting:** their privacy and control over being contacted. **Do not:** defend the outreach or hint they must have signed up. **Who answers: a human must.** |
+| *"Where did you get my email address? I never signed up for anything from you. Take me off your list."* | Sees a question, ignores it, and keeps selling. But the customer didn't really ask a question: someone stepped into their privacy | **Protecting:** their privacy and control over being contacted. **Do not:** defend the outreach or hint they must have signed up. **Who answers: a human must.** |
 | *"Just cancel it. Third bag in a row that tasted stale. I'm done."* | Offers a discount or a free bag to keep them | **Protecting:** their money and time. **Their words:** "I'm done." **Do not:** pitch a replacement or delay the cancellation. **Who answers: a human must.** The shop then writes a 4-sentence draft for a person on the team, and says a person decides any refund. |
 | *"Sounds good, send over the NDA and we'll sign it this week."* | Answers | **Nothing to guard,** they are ready. **Who answers: an agent may.** |
 
