@@ -8,6 +8,7 @@ a short **next message**.
 **Live:**
 - **BEZEN Reader:** https://bezen-reader.netlify.app (the reading layer, callable by any agentic site)
 - **Saltbox Coffee:** https://saltbox-coffee-demo.netlify.app (a demo shop whose agent asks BEZEN before it answers a customer)
+- **Demo video (1:55, Hebrew narration with English subtitles):** https://youtu.be/hBbCSX3z0Ss
 
 **8 of 8 test messages read correctly** (exact quote + right "who answers") · **2 agentic websites, linked peer-to-peer** ·
 **runs fully in the browser**, no server, visitor brings their own key · **consent card before any cross-site call**
