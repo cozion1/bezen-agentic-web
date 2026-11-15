@@ -1,0 +1,70 @@
+{
+  "brand": "Saltbox Coffee",
+  "networks": [
+    {
+      "name": "saltbox_coffee",
+      "front_man": "saltbox_assistant",
+      "hocon": "./saltbox_coffee.network.json",
+      "description": "Saltbox Coffee website assistant. Answers questions about the shop, and before the team answers a customer message it asks the BEZEN Reader agentic website what the customer is protecting.",
+      "tags": [
+        "demo",
+        "uses-bezen-reader"
+      ],
+      "sample_queries": [
+        "A customer wrote: \"Where did you get my email address? I never signed up for anything from you. Take me off your list.\" How should we answer?",
+        "A customer wrote: \"Just cancel it. Third bag in a row that tasted stale. I'm done.\" How should we answer?",
+        "A customer wrote: \"Perfect, switch me to the monthly plan please.\" How should we answer?",
+        "How much is the every-two-weeks plan, and can I pause it?"
+      ]
+    }
+  ],
+  "llm_router": {
+    "base_url": "https://api.otari.ai/api/v1",
+    "mock": false,
+    "byok_router": "https://api.otari.ai/api/v1"
+  },
+  "allowed_peers": [
+    "https://bezen-reader.netlify.app"
+  ],
+  "peer_policy": {
+    "mode": "closed",
+    "deny_origins": [],
+    "note": "Calls only the BEZEN Reader site in allowed_peers, after the visitor agrees."
+  },
+  "agent_mcp": {
+    "protocol": "nsdeploy-agent-mcp/v1",
+    "network": "saltbox_coffee",
+    "front_man": "saltbox_assistant",
+    "available": false,
+    "reason": "This is a static bundle; a public MCP facade requires an application host."
+  },
+  "theme": {
+    "primary": "#8a4b2a"
+  },
+  "linking": {
+    "protocol": "nsdeploy-link/v1",
+    "exports": [
+      {
+        "network": "saltbox_coffee",
+        "front_man": "saltbox_assistant",
+        "aliases": [
+          "saltbox_coffee",
+          "saltbox_assistant"
+        ],
+        "url": "saltbox_coffee"
+      }
+    ],
+    "imports": [],
+    "link_updates": {
+      "mode": "browser-local"
+    }
+  },
+  "deployment": {
+    "mode": "static",
+    "self_contained_runtime": true,
+    "browser_mock": false,
+    "direct_byok": true,
+    "direct_mcp_requires_cors": true,
+    "public_mcp_facade": false
+  }
+}

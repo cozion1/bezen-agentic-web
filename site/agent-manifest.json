@@ -1,0 +1,70 @@
+{
+  "brand": "BEZEN Reader",
+  "networks": [
+    {
+      "name": "bezen_reader",
+      "front_man": "bezen_reader",
+      "hocon": "./bezen_reader.network.json",
+      "description": "Reads what a person is protecting behind a message, before an agent answers it: what they guard, their exact words, what not to do now, whether a human must answer, and the next message.",
+      "tags": [
+        "bezen",
+        "reading-layer",
+        "human-in-the-loop"
+      ],
+      "sample_queries": [
+        "Read this customer reply before we answer it: \"Where did you get my email address? I never signed up for anything from you. Take me off your list.\"",
+        "Read this reply from a client: \"When will it be ready? I told my manager it would be live this month.\"",
+        "Read this message from my son: \"Can I sleep at Daniel's on Friday? Please don't call his mom, it's embarrassing.\"",
+        "Read this reply: \"Sounds good, send over the NDA and we'll sign it this week.\""
+      ]
+    }
+  ],
+  "llm_router": {
+    "base_url": "https://api.otari.ai/api/v1",
+    "mock": false,
+    "byok_router": "https://api.otari.ai/api/v1"
+  },
+  "allowed_peers": [],
+  "peer_policy": {
+    "mode": "open",
+    "deny_origins": [],
+    "note": "Public agent sites are reachable like web pages; credentials and capabilities do not transfer."
+  },
+  "agent_mcp": {
+    "network": "bezen_reader",
+    "front_man": "bezen_reader",
+    "available": false,
+    "reason": "This is a static bundle; a public MCP facade requires an application host.",
+    "protocol": "nsdeploy-agent-mcp/v1"
+  },
+  "theme": {
+    "primary": "#1f6b55"
+  },
+  "linking": {
+    "protocol": "nsdeploy-link/v1",
+    "exports": [
+      {
+        "network": "bezen_reader",
+        "front_man": "bezen_reader",
+        "aliases": [
+          "bezen_reader",
+          "bezen_reader",
+          "bezen"
+        ],
+        "url": "bezen_reader"
+      }
+    ],
+    "imports": [],
+    "link_updates": {
+      "mode": "browser-local"
+    }
+  },
+  "deployment": {
+    "mode": "static",
+    "self_contained_runtime": true,
+    "browser_mock": false,
+    "direct_byok": true,
+    "direct_mcp_requires_cors": true,
+    "public_mcp_facade": false
+  }
+}

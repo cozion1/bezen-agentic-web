@@ -1,0 +1,19 @@
+{
+  "protocol": "nsdeploy-link/v1",
+  "exports": [
+    {
+      "network": "bezen_reader",
+      "front_man": "bezen_reader",
+      "aliases": [
+        "bezen_reader",
+        "bezen_reader",
+        "bezen"
+      ],
+      "url": "bezen_reader"
+    }
+  ],
+  "imports": [],
+  "link_updates": {
+    "mode": "browser-local"
+  }
+}

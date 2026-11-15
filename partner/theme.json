@@ -1,0 +1,22 @@
+{
+  "brand": "Saltbox Coffee",
+  "icon": "☕",
+  "tagline": "Small-batch coffee, by subscription. Demo shop: its assistant asks the BEZEN Reader site before it answers a customer.",
+  "hero": "",
+  "font": "\"Segoe UI\", system-ui, sans-serif",
+  "radius": 16,
+  "colors": {
+    "primary": "#8a4b2a",
+    "accent": "#c27c3a",
+    "bg": "#fbf6f1",
+    "bg_tint": "#f3e6d8",
+    "fg": "#2b1a10",
+    "muted": "#7a5b47",
+    "border": "#ead8c6",
+    "msgbg": "#f6ebdf",
+    "panelbg": "#fffaf5"
+  },
+  "welcome": null,
+  "style": "",
+  "body": "<div id=\"app\" data-ns-layout=\"fixed\">Loading Saltbox Coffee...</div>\n"
+}
