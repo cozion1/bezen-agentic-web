@@ -119,8 +119,9 @@ or a group, their pride, a relationship, their sense of control, their safety, t
 Return:
 - Protecting: one plain sentence.
 - Their words: the shortest exact quote from the message that shows it, copied character for character.
-If the message is simple and nothing is being guarded (for example "Sounds good, send the NDA"),
-say so: Protecting: nothing hidden, they are ready to move.
+If the writer simply agrees, confirms, or asks for a plain change with no complaint and no worry
+(for example "Sounds good, send the NDA" or "Perfect, switch me to the monthly plan"), do not invent
+a hidden need. Write exactly: Protecting: nothing hidden, they are ready to move.
 """
 
 RISK_TEXT = """
