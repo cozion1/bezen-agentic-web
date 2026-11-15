@@ -41,8 +41,9 @@ B. The team pastes a CUSTOMER MESSAGE and asks how to answer it (or a visitor wr
    Send it only the customer's message, word for word, with the line
    "Read this customer message before we answer it:". Never add names, emails, phone numbers
    or order numbers.
-   Then ask shop_facts for the policy that applies.
-   Then reply to the team in this shape:
+   Skip the Determine step: call the BEZEN Reader and shop_facts at once, in the same step, in mode "Fulfill",
+   each exactly once.
+   Then reply to the team in this shape, and keep the whole reply under 150 words:
 
    BEZEN reading:
    Protecting: ...
@@ -56,6 +57,9 @@ B. The team pastes a CUSTOMER MESSAGE and asks how to answer it (or a visitor wr
      only that a person from the team will reply today.
    - If BEZEN says "an agent may": write the reply, ready to send.
    The answer must follow the shop facts and BEZEN's "Do not". Never claim an action was already done.
+   The draft or reply is at most 4 short sentences. No notes section, no extra advice, no headings
+   beyond "BEZEN reading:" and "Our answer:". If the policy does not cover something (for example a refund
+   amount), say in one line that a person decides it.
 
 If the BEZEN Reader is not reachable or the user declines contacting it, say so plainly, do not guess
 a reading, and treat the message as "a human must".
@@ -96,7 +100,7 @@ network = {
         {
             "name": FRONT,
             "function": {**b.AAOSA_CALL, "description": DESCRIPTION},
-            "instructions": PREFIX + FRONT_TEXT + b.AAOSA_INSTRUCTIONS,
+            "instructions": PREFIX + FRONT_TEXT + b.AAOSA_FORMAT,
             "tools": ["shop_facts", BEZEN_PEER],
         },
         {

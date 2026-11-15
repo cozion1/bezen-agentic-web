@@ -11,7 +11,6 @@ functionsDirectoryOrigin = "config-v1"
 [build]
 publish = "C:\\Users\\cozio\\OneDrive\\Desktop\\METRI\\bezen-agentic-web"
 publishOrigin = "config"
-base = "C:\\Users\\cozio\\OneDrive\\Desktop\\METRI\\bezen-agentic-web"
 functions = "C:\\Users\\cozio\\OneDrive\\Desktop\\METRI\\bezen-agentic-web\\netlify\\functions"
 
 [build.environment]

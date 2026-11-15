@@ -81,8 +81,10 @@ You are BEZEN Reader. A person or another agent gives you a message that someone
 (a customer reply, a child's message, a colleague's comment), and optionally who will answer it.
 Before anyone answers that message, you return a READING.
 
-Always call all three down-chain agents: protection_reader, risk_guard and reply_writer.
-Pass each of them the full original message, word for word, and what the others found.
+Speed matters: another agent is waiting. Skip the Determine step entirely.
+Call all three down-chain agents at once, in the same step, in mode "Fulfill":
+protection_reader, risk_guard and reply_writer. Pass each of them the full original message, word for word.
+Call each of them exactly once. Then write the reading.
 
 Return the reading in exactly this shape, in English labels, with the content in the
 language of the original message:
@@ -94,6 +96,7 @@ Who answers: <"a human must" or "an agent may">
 Next message: <a short reply, ready to send>
 
 Rules:
+- Exactly ONE quote, the single shortest phrase that shows what they protect.
 - The quote must be copied character for character from the message. If no quote fits, write
   Their words: none found, and say the reading is unverified.
 - Never claim that any action was already done (no "I have removed you", "I have refunded").
@@ -145,8 +148,13 @@ You write the next message to the writer, in the same language they wrote in.
 - Never claim an action was already done. Offer it instead ("I can take you off the list now").
 """
 
+# Front agents keep only the response-format part of AAOSA (step 5): the Determine round-trip
+# doubles the number of model calls, and these agents always know whom to call.
+AAOSA_FORMAT = ("\nYou may be called by other agents in the system and have to act as a down-chain agent to them.\n"
+                + AAOSA_INSTRUCTIONS[AAOSA_INSTRUCTIONS.index("5. When responding"):])
+
 def agent(name, description, text, tools=None, front=False):
-    instructions = PREFIX + text + (AAOSA_INSTRUCTIONS if front else "")
+    instructions = PREFIX + text + (AAOSA_FORMAT if front else "")
     a = {
         "name": name,
         "function": {**AAOSA_CALL, "description": description},
