@@ -1,3 +1,6 @@
 build/test_results.json
 .env
 .netlify/
+video/build/
+video/voice/*.ogg
+video/*.mp4
