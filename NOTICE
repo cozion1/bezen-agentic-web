@@ -1,0 +1,9 @@
+BEZEN Reader - open agentic website
+Copyright 2026 Zion Cohen (BEZEN)
+
+The browser runtime in site/runtime/ and partner/runtime/ is copied unchanged from
+https://github.com/cognizant-ai-labs/agentic-web (examples/sites/pizza_restaurant_website_assistant_static/runtime),
+licensed under the Apache License 2.0.
+
+Everything else in this repository (the BEZEN Reader and Saltbox Coffee agent networks, manifests,
+build scripts, tests and README) is new work, licensed under the Apache License 2.0.
